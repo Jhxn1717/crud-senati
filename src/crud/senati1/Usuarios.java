@@ -4,7 +4,9 @@
  */
 package crud.senati1;
 import java.sql.*;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -77,15 +79,43 @@ public class Usuarios extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
+            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
+                formWindowGainedFocus(evt);
+            }
+            public void windowLostFocus(java.awt.event.WindowEvent evt) {
+            }
+        });
 
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("FORMULARIO DE USUARIOS");
 
+        btn1.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
         btn1.setText("Agregar");
+        btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn1ActionPerformed(evt);
+            }
+        });
 
+        btn2.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
         btn2.setText("Editar");
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
 
+        btn3.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
         btn3.setText("Eliminar");
+        btn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn3ActionPerformed(evt);
+            }
+        });
 
+        tbl1.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
         tbl1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -99,6 +129,7 @@ public class Usuarios extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbl1);
 
+        jButton1.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 18)); // NOI18N
         jButton1.setText("SALIR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,29 +141,29 @@ public class Usuarios extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(138, 138, 138)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
+                .addContainerGap(36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn3)
-                            .addComponent(btn2)
-                            .addComponent(btn1))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn1)
+                            .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(18, 18, 18))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addGap(46, 46, 46)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn1)
@@ -147,11 +178,105 @@ public class Usuarios extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+    //
+    AgregarUsuario formAdd = new AgregarUsuario();
+    formAdd.setVisible(true);
+    
+    //conexion cn = new conexion();
+    
+    //String query ="INSERT INTO Usuario(id, name, lastname)VALUES(?,?,?)";
+    
+    //try{
+    //    PreparedStatement ps= cn.conectar().prepareStatement(query);
+        
+    //   ps.setInt(1, 3);
+    //    ps.setString(2,"");
+    //    ps.setString(3,"");
+        
+        
+    //  if(ps.execute()){
+     //     System.out.println("Registro insertado correctamente!");
+    //  }
+      
+    //}catch(SQLException e){
+    //    System.out.println(e);
+              
+    // }
+     
+    
+    
+    }//GEN-LAST:event_btn1ActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+    
+    
+    
+    //Usuarios formUser = new Usuarios();
+        if(tbl1.getSelectedRow()> -1){
+        TableModel modelo = tbl1.getModel();
+       
+        
+        String id = modelo.getValueAt(tbl1.getSelectedRow(),0).toString();
+        String name = modelo.getValueAt(tbl1.getSelectedRow(),1).toString();
+        String lastname = modelo.getValueAt(tbl1.getSelectedRow(),2).toString();
+        
+        EditarUsuario formUpd = new EditarUsuario(id, name, lastname);
+        formUpd.setVisible(true);
+        
+        }else{
+            JOptionPane.showMessageDialog(null,"Hey, selecciona un registro");
+        }
+
+        
+
+    
+    
+    
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
+    //System.out.println("gained");
+    cargarUsuarios();
+    }//GEN-LAST:event_formWindowGainedFocus
+
+    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
+    if(tbl1.getSelectedRow()> -1){
+        int option = JOptionPane.showConfirmDialog(null,
+                "Estas seguro de elminiar este registro?",
+                "Eliminar",
+                JOptionPane.OK_OPTION,
+                JOptionPane.CANCEL_OPTION);
+        
+        
+        if(option == 0){
+            TableModel modelo = tbl1.getModel();
+            conexion cn = new conexion();
+            String id = modelo.getValueAt(tbl1.getSelectedRow(),0).toString();
+            String query = "DELETE FROM Usuario WHERE id = ?";
+        try{
+        PreparedStatement ps = cn.conectar().prepareStatement(query);
+        ps.setInt(1, Integer.parseInt(id));
+        ps.execute();
+        
+        }catch(SQLException e){
+        System.out.println(e);
+        }
+        }
+        
+    }else{
+        JOptionPane.showMessageDialog(null,"Hey, selecciona un registro");
+    }
+        
+
+    }//GEN-LAST:event_btn3ActionPerformed
 
     /**
      * @param args the command line arguments
